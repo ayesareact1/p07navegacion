@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link, Outlet, Route, Routes } from 'react-router-dom'
+import CrearCliente from './clientes/CrearCliente'
+import EditarCliente from './clientes/EditarCliente'
 import TablaClientes from './clientes/TablaClientes'
 
 export default function InicioVentas() {
@@ -8,6 +10,10 @@ export default function InicioVentas() {
       <Route path="/" element={<Outlet />}>
         <Route index element={<InicioVentasLayout />}/>
         <Route path="tabla-clientes" element={<TablaClientes />} />
+        <Route path="crear-cliente" element={<CrearCliente />} />
+        <Route path="editar-cliente">
+          <Route path=":cif" element={<EditarCliente />}/>
+        </Route>
       </Route>
     </Routes>
   )
