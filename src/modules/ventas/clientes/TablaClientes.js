@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
+import { useFadeLoad } from '../../../hooks/useFadeLoad';
 import { getClientes } from '../services/Clientes';
 
 export default function TablaClientes() {
@@ -11,7 +12,7 @@ export default function TablaClientes() {
     }, [clientes])
 
   return (
-    <div className='container'>
+    <div className='container' ref={useFadeLoad()}>
         <div className="row">
             <div className="col-100">
                 <h1>Clientes</h1>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, Route, Routes } from "react-router-dom";
 import NavMenu from "./components/NavMenu";
 import Inicio from "./pages/Inicio";
@@ -9,7 +9,9 @@ import Soporte from "./pages/Soporte";
 const InicioVentas = React.lazy(() => import('./modules/ventas/InicioVentas'));
 const InicioRRHH = React.lazy(() => import('./modules/rrhh/InicioRRHH'));
 
+
 function App() {
+
   return (
     <>
       <NavMenu />
